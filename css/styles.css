@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  background-image: url("/assets/19606.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+  background-color: rgba(134, 127, 141, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.card__header--title {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 30px;
+}
+@media (min-width: 800px) {
+  .card__header--title {
+    font-size: 40px;
+  }
+}
+.card__header--nav {
+  width: 50%;
+}
+.card__header--nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 24px;
+  color: #f5f5f5;
+}
+@media (min-width: 1300px) {
+  .card__header--nav ul {
+    font-size: 30px;
+    justify-content: space-between;
+  }
+}
+.card__header--nav ul li {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+}
+.card__header--nav ul li:hover {
+  font-weight: 600;
+  color: #676cf0;
+}
+.card__grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card__content {
+  margin: 0;
+  padding: 0;
+  min-width: 300px;
+  min-height: 200px;
+  border-radius: 8px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 700px;
+}
+.card__content--front {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  z-index: 1;
+  transition: 0.8s;
+}
+.card__content--front img {
+  width: 280px;
+  height: 180px;
+}
+.card__content--back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  transition: 0.8s;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+.card__content--back h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+.card__content--back p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+.card .card__content:hover .card__content--front {
+  transform: rotateY(180deg);
+  z-index: 0;
+}
+.card .card__content:hover .card__content--back {
+  transform: rotateY(0);
+  z-index: 1;
+}
+
+.Africa {
+  background-color: lightgreen;
+}
+
+.Americas {
+  background-color: lightyellow;
+}
+
+.Antarctic {
+  background-color: #d0d0d0;
+}
+
+.Asia {
+  background-color: #ffcccb;
+}
+
+.Europe {
+  background-color: lavender;
+}
+
+.Oceania {
+  background-color: lightblue;
+}
+
+/*# sourceMappingURL=styles.css.map */

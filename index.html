@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style css -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Countries</title>
+  </head>
+  <body>
+    <main class="card">
+      <header class="card__header">
+        <h1 class="card__header--title">Welcome to world countries</h1>
+        <nav class="card__header--nav">
+          <ul>
+            <li onclick="setRegion('Africa')">Africa</li>
+            <li>Americas</li>
+            <li>Asia</li>
+            <li>Europe</li>
+            <li>Oceania</li>
+          </ul>
+        </nav>
+      </header>
+      <section data-js="show" class="card__grid"></section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

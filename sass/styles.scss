@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  background-image: url('/assets/19606.jpg');
+  background-size: contain;
+  background-repeat: repeat;
+
+  margin: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+
+  min-height: 90vh;
+
+  background-color: rgba(134, 127, 141, 0.2);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+
+    &--title {
+      color: #f5f5f5;
+      text-align: center;
+
+      font-size: 30px;
+
+      @media (min-width: 800px) {
+        font-size: 40px;
+      }
+    }
+
+    &--nav {
+      width: 50%;
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        font-size: 24px;
+        color: #f5f5f5;
+
+        @media (min-width: 1300px) {
+          font-size: 30px;
+          justify-content: space-between;
+        }
+
+        li {
+          width: 120px;
+          text-align: center;
+
+          cursor: pointer;
+
+          &:hover {
+            font-weight: 600;
+            color: #676cf0;
+          }
+        }
+      }
+    }
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__content {
+    margin: 0;
+    padding: 0;
+
+    min-width: 300px;
+    min-height: 200px;
+
+    border-radius: 8px;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 700px;
+
+    &--front {
+      position: absolute;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 300px;
+      height: 200px;
+      border-radius: 8px;
+
+      z-index: 1;
+      transition: 0.8s;
+
+      img {
+        width: 280px;
+        height: 180px;
+      }
+    }
+
+    &--back {
+      position: absolute;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 300px;
+      height: 200px;
+      border-radius: 8px;
+
+      transition: 0.8s;
+      transform: rotateY(-180deg);
+      backface-visibility: hidden;
+
+      h3 {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .card__content:hover .card__content--front {
+    transform: rotateY(180deg);
+    z-index: 0;
+  }
+
+  .card__content:hover .card__content--back {
+    transform: rotateY(0);
+    z-index: 1;
+  }
+}
+
+.Africa {
+  background-color: lightgreen;
+}
+
+.Americas {
+  background-color: lightyellow;
+}
+
+.Antarctic {
+  background-color: #d0d0d0;
+}
+
+.Asia {
+  background-color: #ffcccb;
+}
+
+.Europe {
+  background-color: lavender;
+}
+
+.Oceania {
+  background-color: lightblue;
+}
