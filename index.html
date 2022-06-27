@@ -14,13 +14,14 @@
     <main class="card">
       <header class="card__header">
         <h1 class="card__header--title">Welcome to world countries</h1>
-        <nav class="card__header--nav">
-          <ul>
-            <li onclick="setRegion('Africa')">Africa</li>
-            <li onclick="setRegion('Americas')">Americas</li>
-            <li onclick="setRegion('Asia')">Asia</li>
-            <li onclick="setRegion('Europe')">Europe</li>
-            <li onclick="setRegion('Oceania')">Oceania</li>
+        <nav class="card__nav">
+          <ul onclick="myFunction(event)" id="option">
+            <li class="select" onclick="setRegion('')">All</li>
+            <li class="select" onclick="setRegion('Africa')">Africa</li>
+            <li class="select" onclick="setRegion('Americas')">Americas</li>
+            <li class="select" onclick="setRegion('Asia')">Asia</li>
+            <li class="select" onclick="setRegion('Europe')">Europe</li>
+            <li class="select" onclick="setRegion('Oceania')">Oceania</li>
           </ul>
         </nav>
       </header>
