@@ -1,4 +1,5 @@
 let selectRegion = '';
+let g_countries = null;
 
 function fetchCountries() {
   let countriesPromise = fetch('https://restcountries.com/v3.1/all');
@@ -6,6 +7,7 @@ function fetchCountries() {
   countriesPromise.then((resp) => {
     resp.json().then((countries) => {
       orderCountries(countries);
+      g_countries = countries;
     });
   });
 }
@@ -13,6 +15,9 @@ function fetchCountries() {
 function setRegion(region) {
   selectRegion = region;
   console.log(selectRegion);
+
+  return filterByRegion(g_countries, selectRegion);
+
   return selectRegion;
 }
 
@@ -29,13 +34,20 @@ function orderCountries(countries) {
     return 0;
   });
 
-  filterByRegion(countries);
+  renderCountryCard(countries);
 }
 
-function filterByRegion(countries) {
-  if (selectRegion === '') {
+function filterByRegion(countries, region = '') {
+  if (region === '') {
     renderCountryCard(countries);
+    return;
   }
+
+  let filtered_countries = countries.filter(
+    (country) => country.region == region
+  );
+  console.log(filtered_countries);
+  renderCountryCard(filtered_countries);
 }
 
 function renderCountryCard(orderedCountries) {
