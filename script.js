@@ -13,7 +13,7 @@ function init() {
 }
 
 function fetchCountries() {
-  let countriesPromise = fetch('https://restcountries.com/v3.1/all');
+  let countriesPromise = fetch('https://restcountries.com/v2/all');
 
   countriesPromise.then((resp) => {
     resp.json().then((countries) => {
@@ -68,7 +68,8 @@ function renderCountryCard(orderedCountries) {
     <div class="card__content--front ${country.region}"><img src="${country.flags.png}" /></div>
     
     <div class="card__content--back ${country.region}">
-        <h3>${country.name.common}</h3>
+        <h3>${country.name}</h3>
+        <p>Nome nativo: ${country.nativeName}</p>
         <p>Capital: ${country.capital}</p>
         <p>Região: ${country.region}</p>
         <p>Sub-região: ${country.subregion}</p>

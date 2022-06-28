@@ -20,12 +20,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 .card__header {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-content: flex-start !important;
   flex-direction: column;
   margin-bottom: 30px;
   width: 100%;

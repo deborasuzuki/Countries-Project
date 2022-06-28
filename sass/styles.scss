@@ -35,10 +35,13 @@ body {
   border-radius: 10px;
 
   @include flex-center;
+  justify-content: flex-start;
+
   flex-direction: column;
 
   &__header {
     @include flex-center;
+    justify-content: flex-start !important;
     flex-direction: column;
 
     margin-bottom: 30px;
